@@ -1,0 +1,49 @@
+<?php
+/**
+ *
+ * @category    Jworks
+ * @package     Jworks_UrlRewriteImport
+ * @author Jitheesh V O <jitheeshvo@gmail.com>
+ * @copyright Copyright (c) 2017 Jworks Digital ()
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="import-export-promo-promocode">
+    <?php if (!$block->getIsReadonly() && $this->getCurrentRuleId()): ?>
+        <div class="import-promo-promocode">
+            <form id="import-form" class="admin__fieldset" action="<?php /* @escapeNotVerified */
+            echo $block->getUrl('promocode/import/importPost', array('rule_id'=>$this->getCurrentRuleId())) ?>" method="post" enctype="multipart/form-data">
+                <?php echo $block->getBlockHtml('formkey') ?>
+                <div class="fieldset admin__field">
+                    <div class="admin__field-control">
+                        <input type="file" id="import_promocode_file" name="import_promocode_file"
+                               class="input-file required-entry"/>
+                        <?php echo $block->getButtonHtml(__('Import Promocode'), '', 'import-submit') ?>
+                    </div>
+                </div>
+            </form>
+            <script>
+                require(['jquery', "mage/mage", "loadingPopup"], function (jQuery) {
+
+                    jQuery('#import-form').mage('form').mage('validation');
+                    (function ($) {
+                        $('.import-submit').click(function () {
+                            if ($(':input[name="import_promocode_file"]').val()) {
+                                $('body').loadingPopup({
+                                    timeout: false
+                                });
+
+                                $(this.form).submit();
+                            }
+                        });
+                    })(jQuery);
+
+                });
+            </script>
+        </div>
+    <?php else: ?>
+        <p><?php echo __("Import will only available on saved rules") ?></p>
+    <?php endif; ?>
+</div>

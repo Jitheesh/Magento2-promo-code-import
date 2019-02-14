@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category    Jworks
+ * @package     Jworks_PromoCode
+ * @author Jitheesh V O <jitheeshvo@gmail.com>
+ * @copyright Copyright (c) 2017 Jworks Digital ()
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+        <referenceBlock name="sales_rule_form">
+            <block class="Jworks\PromoCode\Block\Adminhtml\Promo\Quote\Edit\Tab\Import" name="promo_sales_rule_edit_tab_import" as="promo_sales_rule_edit_tab_import" template="Jworks_PromoCode::tab/import.phtml">
+                <arguments>
+                    <argument name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Import Coupon Codes</item>
+                        <item name="collapsible" xsi:type="boolean">true</item>
+                        <item name="opened" xsi:type="boolean">false</item>
+                        <item name="sortOrder" xsi:type="string">50</item>
+                        <item name="canShow" xsi:type="boolean">true</item>
+                        <item name="componentType" xsi:type="string">fieldset</item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </referenceContainer>
+    </body>
+</page>
