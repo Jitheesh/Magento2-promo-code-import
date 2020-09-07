@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="promo_sales_rule_edit_tab_import" sortOrder="500">
+        <settings>
+            <collapsible>true</collapsible>
+            <label translate="true">Import Coupon Codes</label>
+        </settings>
+        <htmlContent name="html_content">
+            <block class="Jworks\PromoCode\Block\Adminhtml\Promo\Quote\Edit\Tab\Import" name="promo_sales_rule_edit_tab_import" as="promo_sales_rule_edit_tab_import" template="Jworks_PromoCode::tab/import.phtml">
+                <arguments>
+                    <argument name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Import Coupon Codes</item>
+                        <item name="collapsible" xsi:type="boolean">true</item>
+                        <item name="opened" xsi:type="boolean">false</item>
+                        <item name="sortOrder" xsi:type="string">50</item>
+                        <item name="canShow" xsi:type="boolean">true</item>
+                        <item name="componentType" xsi:type="string">fieldset</item>
+                    </argument>
+                </arguments>
+            </block>
+        </htmlContent>
+    </fieldset>
+</form>
